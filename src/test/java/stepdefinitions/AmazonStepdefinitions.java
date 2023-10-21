@@ -71,4 +71,16 @@ public class AmazonStepdefinitions {
 
         Assert.assertTrue(actualAramaSonucu.contains(arananUrun));
     }
+
+    @Then("ilk urune tiklar")
+    public void ilk_urune_tiklar() {
+        amazonPage.ilkUrunElementi.click();
+    }
+    @Then("urun isminin {string} icerdigini test eder")
+    public void urun_isminin_icerdigini_test_eder(String arananUrun) {
+        String actualIlkUrunIsmi = amazonPage.ilkUrunIsimElementi.getText();
+
+        Assert.assertTrue(actualIlkUrunIsmi.contains(arananUrun));
+    }
+
 }
