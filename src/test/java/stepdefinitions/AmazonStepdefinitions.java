@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -28,8 +29,46 @@ public class AmazonStepdefinitions {
 
         Assert.assertTrue(actualAramaSonucu.contains(expectedIcerik));
     }
-    @Then("Sayfayi kapatir")
+    @Then("sayfayi kapatir")
     public void sayfayi_kapatir() {
         Driver.closeDriver();
+    }
+
+    @Given("arama kutusuna Java yazip aratir")
+    public void arama_kutusuna_java_yazip_aratir() {
+        amazonPage.aramaKutusu.sendKeys("Java"+ Keys.ENTER);
+    }
+    @Then("arama sonuclarinin Java icerdigini test eder")
+    public void arama_sonuclarinin_java_icerdigini_test_eder() {
+        String expectedIcerik = "Java";
+        String actualAramaSonucu = amazonPage.sonucYaziElementi.getText();
+
+        Assert.assertTrue(actualAramaSonucu.contains(expectedIcerik));
+    }
+
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int saniye) {
+        try {
+            Thread.sleep(1000*saniye);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Given("kullanici {string} anasayfaya gider")
+    public void kullaniciAnasayfayaGider(String istenenUrl) {
+        Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+    }
+
+    @Then("arama kutusuna {string} yazip aratir")
+    public void aramaKutusunaYazipAratir(String arananUrun) {
+        amazonPage.aramaKutusu.sendKeys(arananUrun+Keys.ENTER);
+    }
+
+    @And("arama sonuclarinin {string} icerdigini test eder")
+    public void aramaSonuclarininIcerdiginiTestEder(String arananUrun) {
+        String actualAramaSonucu = amazonPage.sonucYaziElementi.getText();
+
+        Assert.assertTrue(actualAramaSonucu.contains(arananUrun));
     }
 }
