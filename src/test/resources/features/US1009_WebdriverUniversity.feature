@@ -1,6 +1,5 @@
 Feature: US1009 Webdriver university testi
 
-  @wip
   Scenario: TC13 coklu window testi
     Given kullanici "webUniUrl" anasayfaya gider
     Then Login Portal'a kadar asagi iner
