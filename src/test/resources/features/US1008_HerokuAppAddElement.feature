@@ -1,6 +1,5 @@
 Feature: US1008 kullanici heroku app sayfasinda beklemeleri yapar
 
-  @wip
   Scenario: TC12 Kullanici bekleme islemlerini yapar
     Given kullanici "herokuappUrl" anasayfaya gider
     When Add Element butonuna basar
