@@ -63,7 +63,7 @@ public class WebUniStepdefinitions {
     }
     @Then("Ilk sayfaya donuldugunu test eder")
     public void ılk_sayfaya_donuldugunu_test_eder() {
-        String expectedIlkSayfaUrl = "https://webdriveruniversity.com/";
+        String expectedIlkSayfaUrl = "http://webdriveruniversity.com/";
         String actulaIlkSayfaUrl = Driver.getDriver().getCurrentUrl();
 
         Assert.assertEquals(expectedIlkSayfaUrl,actulaIlkSayfaUrl);

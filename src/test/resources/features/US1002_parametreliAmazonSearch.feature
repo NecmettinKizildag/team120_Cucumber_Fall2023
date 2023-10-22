@@ -1,3 +1,4 @@
+@amazon
 Feature: US1002 Kullaniuci parametre olarak yazdigi urunu amazonda aratir
 
   Scenario: TC03 parametre ile amazonda arama

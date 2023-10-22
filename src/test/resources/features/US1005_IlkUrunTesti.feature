@@ -1,5 +1,5 @@
 Feature: US1005 kullanici amazonda arama yapip ilk urunu test eder
-
+@amazon
   Scenario: TC09 Ilk urun testi
     Given kullanici "amazonUrl" anasayfaya gider
     And arama kutusuna "Nutella" yazip aratir

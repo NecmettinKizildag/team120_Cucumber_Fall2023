@@ -1,4 +1,4 @@
-
+@amazon
   Feature: US1001 kullanici anasayfada arama yapar
 
     @smoke
