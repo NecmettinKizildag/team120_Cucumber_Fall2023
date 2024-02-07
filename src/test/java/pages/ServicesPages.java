@@ -5,16 +5,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class HomePage {
+public class ServicesPages {
 
-    public  HomePage(){
+    public ServicesPages(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(xpath = "//a[@target='_self']")
+    public WebElement JobsLink;
 
-    @FindBy (xpath = "//*[text()='Services']")
-    public WebElement servicesButton;
 
-    @FindBy (xpath = "//div[@id='CybotCookiebotDialog']")
-    public WebElement CookiesWindow;
 }
